@@ -6,8 +6,6 @@ import Link from 'next/link';
 import css from './Header.module.css';
 import { TagsMenu } from '@/components/TagsMenu/TagsMenu';
 
-// const tags: string[] = ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'];
-
 export default function Header() {
   return (
     <header className={css.header}>

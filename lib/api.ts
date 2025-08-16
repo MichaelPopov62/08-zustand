@@ -1,4 +1,5 @@
-/*Цей файл — API-сервіс для роботи з нотатками, який через HTTP-запити (axios) забезпечує отримання, створення і видалення нотаток на бекенді з використанням авторизаційного токена. Він також містить типи і інтерфейси для нотаток і параметрів запитів.*/
+/*Цей файл — API-сервіс для роботи з нотатками, який через HTTP-запити (axios)  Забезпечує отримання, створення та видалення нотаток на бекенді з авторизаційним токеном.
+  Містить типи і інтерфейси для нотаток та параметрів запитів*/
 
 import axios from 'axios';
 
@@ -12,9 +13,9 @@ const BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ??
   'https://notehub-public.goit.study/api';
 
-// Приклад статичного масиву тегів
+// Типи тегів нотаток
 export type Tag = 'Todo' | 'Work' | 'Personal' | 'Meeting' | 'Shopping';
-
+// Приклад статичного масиву тегів
 export const tags: Tag[] = ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'];
 
 // Інтерфейс параметрів для отримання нотаток через API
@@ -65,10 +66,6 @@ export async function fetchNotes({
   });
 
   return res.data;
-  // notes: res.data.notes,
-  // totalPages: res.data.totalPages ?? 1,
-  // tag: res.data.tag,
-  // tags: res.data.tags,
 }
 
 // Функція отримання нотатки за ID

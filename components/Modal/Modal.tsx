@@ -10,10 +10,6 @@ type Props = {
 };
 
 const Modal = ({ children }: Props) => {
-  // const router = useRouter();
-
-  // const close = () => router.back();
-
   return (
     <div className={css.backdrop}>
       <div className={css.modal}>{children}</div>
