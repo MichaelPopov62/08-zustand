@@ -52,11 +52,11 @@ const NoteForm = ({ categories }: Props) => {
       return;
     }
     if (title.length > 30) {
-      setErrorMessage('Title must be at most 50 characters.'); // максимальна довжина заголовка
+      setErrorMessage('Title must be at most 30 characters.'); // максимальна довжина заголовка
       return;
     }
     if (content.length > 300) {
-      setErrorMessage('Content must be at most 500 characters.'); // максимальна довжина змісту нотатки
+      setErrorMessage('Content must be at most 300 characters.'); // максимальна довжина змісту нотатки
       return;
     }
 
@@ -86,8 +86,6 @@ const NoteForm = ({ categories }: Props) => {
           onChange={(e) => {
             // при зміні input оновлюємо draft
             setDraft({ title: e.target.value });
-            console.log('Змінився title:', e.target.value);
-            console.log('Поточний draft:', { ...draft, title: e.target.value });
           }}
         />
       </div>
@@ -104,11 +102,6 @@ const NoteForm = ({ categories }: Props) => {
           value={draft.content} // значення береться з draft
           onChange={(e) => {
             setDraft({ content: e.target.value });
-            console.log('Змінився content:', e.target.value);
-            console.log('Поточний draft:', {
-              ...draft,
-              content: e.target.value,
-            });
           }}
         />
       </div>
@@ -124,11 +117,6 @@ const NoteForm = ({ categories }: Props) => {
           value={draft.tag} // значення береться з draft
           onChange={(e) => {
             setDraft({ tag: e.target.value as Tag });
-            console.log('Змінився tag:', e.target.value);
-            console.log('Поточний draft:', {
-              ...draft,
-              tag: e.target.value as Tag,
-            });
           }}
         >
           {categories.map((category) => (
